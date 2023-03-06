@@ -17,7 +17,6 @@ export default function Forecasts({ cityData }) {
         name: format(dt, "EEEE", { locale: fr })
       };
     });
-    console.log(forecasts);
     setForecasts(forecastData);
   },[cityData]);
 
