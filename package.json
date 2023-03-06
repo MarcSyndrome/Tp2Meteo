@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/webpack-config": "^18.0.1",
     "@unimodules/core": "^7.1.2",
     "@unimodules/react-native-adapter": "^6.3.9",
     "axios": "^0.21.1",
@@ -17,7 +18,9 @@
     "expo-location": "~15.1.1",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
-    "react-native": "0.71.3"
+    "react-native": "0.71.3",
+    "react-native-web": "~0.18.10",
+    "react-open-weather-icons": "^0.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

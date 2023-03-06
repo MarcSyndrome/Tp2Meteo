@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from '../Styles/style.js';
 
 export default function CurrentWeather({ cityData }) {
 
-    // const weatherIconName = cityData.weather[0].icon; // Récupération du nom de l'icône depuis l'API
-    // const weatherIcon = <Icon name={iconMap[weatherIconName]} size={100} color="#fff" />; // Création de l'élément d'icône
-  
+    const weatherIcon = cityData.list && (
+      <Image
+        source={{ uri: `http://openweathermap.org/img/w/${cityData.list[0].weather[0].icon}.png` }}
+        style={{ width: 100, height: 100 }}
+      />
+    );
+
     return (
       <View style={[styles.textCont]}>
         {cityData.list && (
@@ -18,14 +22,14 @@ export default function CurrentWeather({ cityData }) {
           {'\n'}
           </Text>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{fontSize: 40, fontWeight: 'bold', color: "white"}}>
-          {Math.round(cityData?.list[0].main.temp)}°C 
-          {'\n'}
-          {cityData.list[0].weather[0].description}
-          {'\n'}
-          
-          </Text>
-        </View>
+            {weatherIcon}
+            <Text style={{fontSize: 40, fontWeight: 'bold', color: "white", textAlign: 'center'}}>
+            {Math.round(cityData?.list[0].main.temp)}°C 
+            {'\n'}
+            {cityData.list[0].weather[0].description}
+            {'\n'}
+            </Text>
+          </View>
         </>
         )}
       </View>
