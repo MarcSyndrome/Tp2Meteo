@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     height: 200,
     paddingTop: 20,
+    marginTop: 20
   },
   tempContainer: {
     marginTop: 10,

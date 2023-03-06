@@ -21,7 +21,7 @@ export default function CurrentWeather({ cityData }) {
           <Text style={{fontSize: 20, color: "white"}}>Température actuelle : 
           {'\n'}
           </Text>
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingTop: 20}}>
             {weatherIcon}
             <Text style={{fontSize: 40, fontWeight: 'bold', color: "white", textAlign: 'center'}}>
             {Math.round(cityData?.list[0].main.temp)}°C 
